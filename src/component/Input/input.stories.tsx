@@ -1,16 +1,82 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
+import { Input } from './input'
 
-import Input from './input'
+/**
+ * 添加受控组件
+ */
+const ControlledInput = (props: any) => {
+    const [value, setValue] = useState() 
+    return (
+        <Input { ...props } value={ value } onChange={(e) => { setValue(e.target.value)}} />
+    )
+}
 
 const defaultInput = () => (
     <>
-        <Input />
-        <Input size='lg' />
-        <Input size='sm' />
+        <Input
+            style={{ width: '300px' }}
+            defaultValue='default'
+            placeholder="placeholder"
+            onChange={action('changed')}
+        />
+        <ControlledInput 
+            placeholder="placeholder"
+        />
+    </>
+)
+const disabledInput = () => (
+    <Input
+        style={{ width: '300px' }}
+        placeholder="disabled input"
+        disabled
+    />
+)
+
+const iconInput = () => (
+    <Input
+        style={{ width: '300px' }}
+        placeholder="input with icon"
+        icon="search"
+    />
+)
+
+const sizeInput = () => (
+    <>
+        <Input
+            style={{ width: '300px' }}
+            defaultValue="large size"
+            size="lg"
+        />
+        <Input
+            style={{ width: '300px' }}
+            placeholder="small size"
+            size="sm"
+        />
     </>
 )
 
-storiesOf('Input 输入框', module)
+const pandInput = () => (
+    <>
+        <Input
+            style={{ width: '300px' }}
+            defaultValue="prepend text"
+            prepend="https://"
+        />
+        <Input
+            style={{ width: '300px' }}
+            defaultValue="google"
+            append=".com"
+        />
+
+    </>
+)
+
+
+storiesOf('Input component', module)
     .add('Input', defaultInput)
+    .add('被禁用的 Input', disabledInput)
+    .add('带图标的 Input', iconInput)
+    .add('大小不同的 Input', sizeInput)
+    .add('带前后缀的 Input', pandInput)

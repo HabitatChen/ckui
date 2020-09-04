@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, ReactElement, InputHTMLAttributes } from 'react'
+import React, { CSSProperties, FC, ReactElement, InputHTMLAttributes, ChangeEvent } from 'react'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import classNames from 'classnames'
 import Icon from '../Icon/icon'
@@ -13,6 +13,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size
     prepend?: string | ReactElement;
     append?: string | ReactElement;
     style?: CSSProperties
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 export const Input: FC<InputProps> = (props) => {
@@ -26,6 +27,19 @@ export const Input: FC<InputProps> = (props) => {
         'input-group-append': !!append,
         'input-group-prepend': !!prepend
     })
+
+    const fixControlledValue = (value: any) => {
+        if (typeof value === 'undefined' || value === null) {
+            return ''
+        }
+        return value
+    }
+
+    // 如果存在value，则删除defaultValue
+    if ('value' in props) {
+        delete restProps.defaultValue
+        restProps.value = fixControlledValue(props.value)
+    }
 
     return (
         // 根据属性判断是否要添加特定的节点
