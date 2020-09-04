@@ -65,7 +65,7 @@ export var AutoComplete = function (props) {
             setSuggestions([]);
         }
         setHighlightIndex(-1);
-    }, [debouncedValue]);
+    }, [debouncedValue, fetchSuggest]);
     /**
      * 输入值改变时触发
      *

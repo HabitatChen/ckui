@@ -57,7 +57,7 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
             setSuggestions([])
         }
         setHighlightIndex(-1)
-    }, [debouncedValue])
+    }, [debouncedValue, fetchSuggest])
 
     /**
      * 输入值改变时触发

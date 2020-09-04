@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/HabitatChen/ckui/static/css/main.6ae8c044.chunk.css",
+    "main.js": "/HabitatChen/ckui/main.16477ae01df848b20c84.bundle.js",
+    "main.css.map": "/HabitatChen/ckui/static/css/main.6ae8c044.chunk.css.map",
+    "main.js.map": "/HabitatChen/ckui/main.16477ae01df848b20c84.bundle.js.map",
+    "runtime~main.js": "/HabitatChen/ckui/runtime~main.16477ae01df848b20c84.bundle.js",
+    "runtime~main.js.map": "/HabitatChen/ckui/runtime~main.16477ae01df848b20c84.bundle.js.map",
+    "vendors~main.css": "/HabitatChen/ckui/static/css/vendors~main.f8f248a5.chunk.css",
+    "vendors~main.js": "/HabitatChen/ckui/vendors~main.16477ae01df848b20c84.bundle.js",
+    "vendors~main.css.map": "/HabitatChen/ckui/static/css/vendors~main.f8f248a5.chunk.css.map",
+    "vendors~main.js.map": "/HabitatChen/ckui/vendors~main.16477ae01df848b20c84.bundle.js.map",
+    "iframe.html": "/HabitatChen/ckui/iframe.html",
+    "precache-manifest.a6b2f907083f1f9c1a0c37c147875657.js": "/HabitatChen/ckui/precache-manifest.a6b2f907083f1f9c1a0c37c147875657.js",
+    "service-worker.js": "/HabitatChen/ckui/service-worker.js",
+    "vendors~main.16477ae01df848b20c84.bundle.js.LICENSE.txt": "/HabitatChen/ckui/vendors~main.16477ae01df848b20c84.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.16477ae01df848b20c84.bundle.js",
+    "static/css/vendors~main.f8f248a5.chunk.css",
+    "vendors~main.16477ae01df848b20c84.bundle.js",
+    "static/css/main.6ae8c044.chunk.css",
+    "main.16477ae01df848b20c84.bundle.js"
+  ]
+}

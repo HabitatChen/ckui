@@ -38,7 +38,7 @@ describe('test autoComplete component', () => {
             expect(wrapper.queryByText('ab')).toBeInTheDocument()
         })
 
-        expect(wrapper.container.)
+        // expect(wrapper.container.)
         
     })
 
