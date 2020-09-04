@@ -1,41 +1,47 @@
 {
-  "name": "ckui",
-  "version": "0.1.0",
-  "private": true,
+  "name": "ckui-react",
+  "version": "0.1.1",
+  "private": false,
+  "description": "react components library",
+  "author": "habitatchen",
+  "license": "MIT",
+  "keywords": [
+    "Components",
+    "UI",
+    "React"
+  ],
+  "homepage": "https://github.com/HabitatChen/ckui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HabitatChen/ckui"
+  },
+  "files": [ "dist" ], 
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "peerDependencies": {
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@fortawesome/react-fontawesome": "^0.1.8",
-    "@storybook/addon-info": "^5.3.19",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/classnames": "^2.2.10",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
     "axios": "^0.20.0",
-    "babel": "^6.23.0",
-    "babel-core": "^6.26.3",
     "classnames": "^2.2.6",
-    "node-sass": "^4.14.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
-    "react-transition-group": "^4.4.1",
-    "sass-loader": "^9.0.3",
-    "typescript": "~3.7.2"
+    "react-transition-group": "^4.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "yarn build-ts && yarn build-css",
+    "clean": "rimraf ./dist",
+    "build": "yarn clean && yarn build-ts && yarn build-css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "build-ts": "tsc -p tsconfig.build.json",
-    "build-css": "node-sass ./src/styles/index.scss ./build/index.css"
+    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
+    "prepublish": "yarn build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -53,9 +59,16 @@
     ]
   },
   "devDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "sass-loader": "^9.0.3",
+    "typescript": "~3.7.2",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "react-scripts": "3.4.3",
+    "node-sass": "^4.14.1",
     "@babel/core": "^7.11.4",
     "@storybook/addon-actions": "^5.2.8",
-    "@storybook/addon-info": "^5.2.8",
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addons": "^5.2.8",
     "@storybook/preset-create-react-app": "^3.1.4",
@@ -65,6 +78,14 @@
     "babel-loader": "^8.1.0",
     "react-docgen-typescript-loader": "^3.7.2",
     "react-is": "^16.13.1",
-    "rimraf": "^3.0.2"
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@storybook/addon-info": "^5.3.19",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2"
   }
 }
